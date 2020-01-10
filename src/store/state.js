@@ -1,6 +1,11 @@
 export default {
-    searchString: '*',
     results: [],
     resultsCount: 0,
     facets: [],
+    searchString: "*",
+    filters: {},
+    filterString: "",
+    currentPage: 1,
+    resultsPerPage: 10,
+    orderBy: "",
   };

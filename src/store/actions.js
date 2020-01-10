@@ -2,11 +2,11 @@
 import searchClient from "@/services/azsearch.service";
 
 export default {
-  executeSearch({ commit }) {
+  executeSearch({ state, commit }) {
     searchClient.search(
       "realestate-us-sample-index",
       {
-        search: `*`,
+        search: `${state.searchString}`,
         facets: ["beds", "baths", "type"],
         count: true
       },
@@ -16,5 +16,10 @@ export default {
         commit("SET_FACETS", raw["@search.facets"]);
       }
     );
+  },
+
+  setSearchString({ dispatch, commit }, value = "*") {
+    commit("SET_SEARCHSTRING", value);
+    dispatch("executeSearch");
   }
 };

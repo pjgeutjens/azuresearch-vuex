@@ -9,5 +9,9 @@ export default {
   
     SET_RESULTS_COUNT(state, count) {
       state.resultsCount = count;
+    },
+
+    SET_SEARCHSTRING(state, value) {
+      state.searchString = value;
     }
   };

@@ -52,4 +52,16 @@ export default {
         state.filters = {};
         state.filterString = "";
       },
+
+      SET_CURRENT_PAGE(state, page) {
+        state.currentPage = page;
+      },
+    
+      SET_RESULTS_PER_PAGE(state, count) {
+        state.resultsPerPage = count;
+      },
+        
+      SET_ORDERBY(state, value) {
+        state.orderBy = value;
+      }
   };

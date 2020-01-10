@@ -9,6 +9,9 @@ export default {
         search: `${state.searchString}`,
         filter: `${state.filterString}`,
         facets: ["beds", "baths", "type"],
+        top: state.resultsPerPage,
+        skip: (state.currentPage - 1) * state.resultsPerPage,
+        orderby: `${state.orderBy}`,
         count: true
       },
       (err, results, raw) => {
@@ -23,7 +26,7 @@ export default {
     commit("SET_SEARCHSTRING", value);
     dispatch("executeSearch");
   },
-
+  
   setFilter({ dispatch, commit }, payload) {
     commit("SET_FILTERS", payload);
     dispatch("executeSearch");
@@ -31,5 +34,21 @@ export default {
 
   clearFilters({ commit }) {
     commit("CLEAR_FILTERS");
-  }
+  },
+
+  setCurrentPage({ dispatch, commit }, page) {
+    commit('SET_CURRENT_PAGE', page);
+    dispatch('executeSearch');
+  },
+
+  setResultsPerPage({ dispatch, commit }, count) {
+    commit('SET_RESULTS_PER_PAGE', count);
+    dispatch('executeSearch');
+  },
+
+  setOrderBy({ dispatch, commit }, value) {
+    commit('SET_CURRENT_PAGE', 1);
+    commit('SET_ORDERBY', value);
+    dispatch('executeSearch');
+  },
 };

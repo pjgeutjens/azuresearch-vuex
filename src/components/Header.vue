@@ -7,20 +7,9 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav >
         <b-nav-form>
-          <b-form-input lazy 
-            v-model="searchString"
-            size="sm" class="mr-sm-6"
-            placeholder="Search">
-          </b-form-input>
-          <b-button
-            size="sm"
-            variant="info"
-            @click="executeSearch">Search
-          </b-button>
-          <b-button size="sm"
-            variant="primary"
-            @click="resetSearchString">Reset
-          </b-button>
+          <b-form-input @keydown.enter.prevent="handleInputEnter" lazy v-model="searchString" size="sm" class="mr-sm-6" placeholder="Search"></b-form-input>
+          <b-button size="sm" variant="info" @click="executeSearch">Search</b-button>
+          <b-button size="sm" variant="primary" @click="resetSearchString">Reset</b-button>
         </b-nav-form>
       </b-navbar-nav>
     </b-collapse>
@@ -45,6 +34,9 @@ export default {
     },
     resetSearchString() {
       this.$store.dispatch('setSearchString');
+    },
+    handleInputEnter(e) {
+      this.$store.dispatch('setSearchString', e.target.value);
     }
   }
   

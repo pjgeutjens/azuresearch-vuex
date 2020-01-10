@@ -7,6 +7,7 @@ export default {
       "realestate-us-sample-index",
       {
         search: `${state.searchString}`,
+        filter: `${state.filterString}`,
         facets: ["beds", "baths", "type"],
         count: true
       },
@@ -21,5 +22,14 @@ export default {
   setSearchString({ dispatch, commit }, value = "*") {
     commit("SET_SEARCHSTRING", value);
     dispatch("executeSearch");
+  },
+
+  setFilter({ dispatch, commit }, payload) {
+    commit("SET_FILTERS", payload);
+    dispatch("executeSearch");
+  },
+
+  clearFilters({ commit }) {
+    commit("CLEAR_FILTERS");
   }
 };

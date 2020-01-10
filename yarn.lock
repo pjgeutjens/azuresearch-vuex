@@ -1782,6 +1782,11 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.9.0.tgz#24390e6ad61386b0a747265754d2a17219de862c"
   integrity sha512-Uvq6hVe90D0B2WEnUqtdgY1bATGz3mw33nH9Y+dmA+w5DHvUmBgkr5rM/KCHpCsiFNRUfokW/szpPPgMK2hm4A==
 
+azure-search@^0.0.21:
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/azure-search/-/azure-search-0.0.21.tgz#a63be6b3ad5ae1c021f757f9317225effa2388fc"
+  integrity sha512-aYsBQp0Per+WqrkPAG19SYBufl5q9F6J0tRO+hh3EI0CUmum+G/yMCUKIp/tK43iXAVSvYL6lfXPUDtBnyfDxg==
+
 babel-code-frame@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-code-frame/-/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
